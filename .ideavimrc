@@ -68,5 +68,8 @@ nnoremap gE :action GotoPreviousError<CR>
 nnoremap <TAB> :action NextTab<CR>
 nnoremap <s-TAB> :action PreviousTab<CR>
 
+" Map <leader>y to yank to system clipboard
+map <leader>y "+y
+
 
 
