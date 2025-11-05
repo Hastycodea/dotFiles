@@ -1,33 +1,53 @@
 {
   "editor.formatOnSave": true,
   "editor.suggest.insertMode": "replace",
-  "terminal.integrated.fontFamily": "MesloLGS NF",
   "editor.linkedEditing": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 0.01,
   "launch": {},
-  "[json]": {},
-  "workbench.statusBar.visible": false,
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "breadcrumabs.enabled": false,
   "update.showReleaseNotes": false,
-  "workbench.activityBar.visible": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false,
-  "editor.lineNumbers": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
+  "vim.useSystemClipboard": true,
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
+  "vim.foldfix": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "white",
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
   "vim.normalModeKeyBindingsNonRecursive": [
+    //  Toggle maximize editor group (hide other splits) with <leader>o
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["workbench.action.toggleMaximizeEditorGroup"]
+    },
     // NAVIGATION
     // switch b/w buffers
     { "before": ["<S-h>"], "commands": [":bprevious"] },
     { "before": ["<S-l>"], "commands": [":bnext"] },
 
+    // Tab only
+    { "before": ["leader", "t"], "commands": [":tabonly"] },
+
     // splits
     { "before": ["leader", "v"], "commands": [":vsplit"] },
     { "before": ["leader", "s"], "commands": [":split"] },
+
+    // navigating error
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
 
     // panes
     {
@@ -67,6 +87,15 @@
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // scrolling line down and line up
+    {
+      "before": ["<C-j>"],
+      "commands": ["scrollLineDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["scrollLineUp"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -83,10 +112,71 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "go.toolsManagement.autoUpdate": true,
-  "[typescript]": {
+  "redhat.telemetry.enabled": true,
+  "editor.fontSize": 12,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "el-vsc-v1-icons",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "monospace",
+  "json.schemas": [],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.lineNumbers": "relative",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Everforest Dark",
+  "editor.minimap.enabled": false,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+  "find-it-faster.findWithinFiles.fuzzRipgrepQuery": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "terminal.integrated.env.linux": {},
+  "console-ninja.featureSet": "Community",
+  "editor.wordWrap": "on",
+  "git.openRepositoryInParentFolders": "never",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.commandCenter": false,
+  "workbench.sideBar.location": "right",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "window.menuBarVisibility": "compact",
+  "workbench.activityBar.location": "hidden"
 }
